@@ -1,11 +1,10 @@
 <?php
-
 include("db.php");
 include("header.php");
-
 ?>
 
 <div class="panel panel-default">
+    <!-- adding two buttons  -->
     <div class="panel panel-heading">
         <h2>
             <a class="btn btn-success" href="add.php">Add student</a>
@@ -23,23 +22,22 @@ include("header.php");
                     <th>Attendence status</th>
                 </tr>
 
-                <?php 
-                $result=mysqli_query($conn,"select * from attendence");
-                $serialnumber =0;
-                while(  $row=mysqli_fetch_array($result))
-                {
+                <?php
+                $result = mysqli_query($conn, "select * from attendence");
+                $serialnumber = 0;
+                while ($row = mysqli_fetch_array($result)) {
                     $serialnumber++;
-                    ?>
+                ?>
                     <tr>
                         <td> <?php echo $serialnumber; ?></td>
                         <td> <?php echo $row['student_name']; ?></td>
                         <td> <?php echo $row['roll_number']; ?></td>
                         <td>
-                            <input type="radio" name="" value="Present"> Present
-                            <input type="radio" name="" value="Absent"> Absent
+                            <input type="radio" name="" value="Present"> Present </input> 
+                            <input type="radio" name="" value="Absent"> Absent </input>
                         </td>
-                        </tr>
-                    <?php
+                    </tr>
+                <?php
                 }
 
                 ?>
