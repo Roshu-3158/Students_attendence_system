@@ -27,7 +27,7 @@ $flag = 0;
     <div class="panel panel-heading">
         <h2>
             <a class="btn btn-success" href="add.php">Add student</a>
-            <a class="btn btn-info pull-right" href="viewall.php">View All</a>
+            <a class="btn btn-info pull-right" href="view_all.php">View All</a>
         </h2>
 
         <?php if($flag){ ?>
@@ -43,7 +43,7 @@ $flag = 0;
         <form action="index.php" method="post">
             <table class="table table-stripped">
                 <tr>
-                    <th>Serial Number</th>
+                    <th>#Serial Number</th>
                     <th>Student Name</th>
                     <th>Roll Number</th>
                     <th>Attendence status</th>
