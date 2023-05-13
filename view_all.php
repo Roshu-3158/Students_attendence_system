@@ -19,7 +19,6 @@ include("header.php");
 
 
     <div class="panel panel-body">
-        <form action="index.php" method="post">
             <table class="table table-stripped">
                 <tr>
                     <th>Serial Number</th>
@@ -37,7 +36,7 @@ include("header.php");
                         <td> <?php echo $serialnumber; ?></td>
                         <td> <?php echo $row['date']; ?></td>
                         <td> 
-                            <form action="show_attendance.php">
+                            <form action="show_attendance.php" method="POST">
                                 <input type="hidden" value="<?php echo $row['date'] ?>" name="date">
                                 <input type="submit" value="Show Attendance" class="btn btn-primary">
 
