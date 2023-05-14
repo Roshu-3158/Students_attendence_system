@@ -94,8 +94,16 @@ $update=0;
                         <input type="hidden" value="<?php echo $row['roll_number']; ?>" name="roll_number[]">
 
                         <td>
-                            <input type="radio" name="attendence_status[<?php echo $counter; ?>]" value="Present"> Present </input> 
-                            <input type="radio" name="attendence_status[<?php echo $counter; ?>]" value="Absent"> Absent </input>
+                            <input type="radio" name="attendence_status[<?php echo $counter; ?>]" value="Present"
+                            <?php if(isset($_POST['attendence_status'][$counter]) && $_POST['attendence_status'][$counter]=="present"){
+                                echo"checked=checked";
+                            } ?> 
+                            required> Present </input>
+                            <input type="radio" name="attendence_status[<?php echo $counter; ?>]" value="Absent"> 
+                            <?php if(isset($_POST['attendence_status'][$counter]) && $_POST['attendence_status'][$counter]=="absent"){
+                                echo"checked=checked";
+                            } ?> 
+                            } ?>Absent </input>
                         </td>
                     </tr>
                 <?php
