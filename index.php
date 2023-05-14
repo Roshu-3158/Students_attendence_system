@@ -1,4 +1,5 @@
 <?php
+error_reporting(0); // which stops all the error reporting
 include("db.php");
 include("header.php");
 $flag = 0;
@@ -7,8 +8,8 @@ $update=0;
     {
         $date=date("Y-m-d");
 
-        $records = mysqli_query($conn,"select * from attendence_records where date='$date'");
-        $num = mysqli_num_rows($records);
+        $records=mysqli_query($conn,"select * from attendence_records where date='$date'");
+        $num=mysqli_num_rows($records);
 
         if($num){
             foreach($_POST['attendence_status'] as $id=>$attendence_status)
@@ -16,13 +17,11 @@ $update=0;
                 $student_name=$_POST['student_name'][$id];
                 $roll_number=$_POST['roll_number'][$id];
 
-                $result = mysqli_query($conn,"update attendence_records set student_name=$'student_name',roll_number='$roll_number',attendence_status='$attendence_status',date='$date' where date='$date'" );
+                $result = mysqli_query($conn,"update attendence_records set student_name='$student_name',roll_number='$roll_number',attendence_status='$attendence_status',date='$date' where date='$date'" );
                 if($result){
                     $update=1;
                 }
-
             }
-
 
         }
         else{
@@ -103,7 +102,7 @@ $update=0;
                             <?php if(isset($_POST['attendence_status'][$counter]) && $_POST['attendence_status'][$counter]=="absent"){
                                 echo"checked=checked";
                             } ?> 
-                            } ?>Absent </input>
+                            Absent </input>
                         </td>
                     </tr>
                 <?php
