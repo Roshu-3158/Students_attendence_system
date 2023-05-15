@@ -6,7 +6,7 @@
     {
         mysqli_query($conn,"insert into attendence(student_name,roll_number)values('$_POST[name]','$_POST[roll]')");
     }
-?>
+?> 
 
 <div class="panel panel-default">
     <div class="panel-heading">
